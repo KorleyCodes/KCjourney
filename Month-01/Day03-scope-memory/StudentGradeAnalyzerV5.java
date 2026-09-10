@@ -46,6 +46,7 @@ public class StudentGradeAnalyzerV5 {
     public static void printStudentGrade(double score) {
         String grade = calculateGrade(score);
         System.out.println("Your grade is " + grade);
+        
         boolean passed = isPassing(score);
         if (passed) {
             System.out.println("You passed the exam");
@@ -54,20 +55,25 @@ public class StudentGradeAnalyzerV5 {
         }
     }
 
-    public static void main(String[] agrgs) {
-        String studentName = "KorleyCodes";
-        int studentAge = 20;
-        double studentScore = 41.5;
-        printStudentInfo(studentName, studentAge, studentScore);
-
-        printStudentGrade(studentScore);
-
-        boolean maturity = isAdult(studentAge);
+    public static void printAgeCategory(int age){
+        boolean maturity = isAdult(age);
         if (maturity) {
             System.out.println("You are an adult");
         } else {
             System.out.println("You are a minor");
         }
+    }
+
+    public static void main(String[] agrgs) {
+        String studentName = "KorleyCodes";
+        int studentAge = 20;
+        double studentScore = 41.5;
+        
+        printStudentInfo(studentName, studentAge, studentScore);
+
+        printStudentGrade(studentScore);
+
+        printAgeCategory(studentAge);
 
         double doubledScore = doubleScore(studentScore);
         System.out.println("A double of your score gives " + doubledScore);
